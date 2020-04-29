@@ -10,6 +10,7 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 RUN apt-get update -y \
  && apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 \
  && useradd -d /home/container -m container
+ && chmod 777 -R /tmp
  
 USER container
 ENV  USER=container HOME=/home/container
